@@ -1,9 +1,13 @@
 const express = require('express');
+const dotenv = require('dotenv');
 
-const upload = require('../../middlewares/upload');
+const router = require('../../internal/routes');
 
-const app = express();
+(() => {
+  dotenv.config();
 
-app.post('/upload', upload);
+  const app = express();
 
-app.listen(3001);
+  app.use(router);
+  app.listen(process.env.PORT);
+})();
