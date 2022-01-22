@@ -8,11 +8,23 @@
   "private": false,
   "scripts": {
     "dev": "nodemon cmd/do-spaces/main.js",
+    "start": "node cmd/do-spaces/main.js",
     "lint": "eslint ."
   },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 80
+  },
   "eslintConfig": {
+    "plugins": [
+      "prettier"
+    ],
     "extends": [
-      "airbnb-base/legacy"
+      "airbnb-base/legacy",
+      "prettier"
     ],
     "env": {
       "node": true,
@@ -22,20 +34,29 @@
       "ecmaVersion": 2017
     },
     "rules": {
+      "semi": [
+        0,
+        "never"
+      ],
       "strict": [
-        "off"
+        0
       ]
     }
   },
   "dependencies": {
     "aws-sdk": "^2.1060.0",
     "dotenv": "^14.2.0",
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "multer": "^1.4.4",
+    "multer-s3": "^2.10.0"
   },
   "devDependencies": {
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
-    "nodemon": "^2.0.15"
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
   }
 }

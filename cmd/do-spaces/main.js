@@ -1,13 +1,12 @@
-const express = require('express');
-const dotenv = require('dotenv');
+require('../../internal/env')
 
-const router = require('../../internal/routes');
+const express = require('express')
 
-(() => {
-  dotenv.config();
+const router = require('../../internal/routes')
 
-  const app = express();
+;(() => {
+    const app = express()
 
-  app.use(router);
-  app.listen(process.env.PORT);
-})();
+    app.use(router)
+    app.listen(process.env.PORT)
+})()
