@@ -2,7 +2,7 @@
 
 Express/S3 file uploader.
 
-Support Digital Ocean Spaces and AWS/S3 both.
+Supports Digital Ocean Spaces and AWS/S3 both.
 
 ### Requirements
 - `node.js ^16`
@@ -20,7 +20,7 @@ Support Digital Ocean Spaces and AWS/S3 both.
 ### Configuration
 - `.env.example` contains available configuration options
 
-### Control upload progress (axios)
+### Uploading progress
 ```javascript
 axios.post(url, formData, {
     headers: { 
