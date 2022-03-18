@@ -13,7 +13,7 @@ const uploadRoute = (req, res) => {
         return res.status(400).end('Invalid Request')
     }
 
-    res.json({ url })
+    return res.json({ url })
 }
 
 module.exports = uploadRoute
