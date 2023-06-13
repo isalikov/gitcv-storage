@@ -11,6 +11,12 @@ const s3 = new AWS.S3({
 })
 
 const uploadService = multer({
+    limits: {
+        fields: process.env.MAX_FILE_SIZE,
+        fileSize: process.env.MAX_FILE_SIZE,
+        files: process.env.MAX_FILE_SIZE,
+        parts: process.env.MAX_FILE_SIZE,
+    },
     storage: multerS3({
         s3: s3,
         acl: 'public-read',

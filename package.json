@@ -2,7 +2,10 @@
   "name": "@isalikov/gitcv-storage",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:isalikov/gitcv-storage.git",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:isalikov/gitcv-storage.git"
+  },
   "author": "Iakov Salikov <salikovpro@gmail.com>",
   "license": "UNLICENSED",
   "private": true,
