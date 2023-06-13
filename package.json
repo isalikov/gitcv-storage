@@ -1,14 +1,14 @@
 {
-  "name": "do-spaces",
-  "version": "1.1.0",
+  "name": "@isalikov/gitcv-storage",
+  "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:isalikov/do-spaces.git",
+  "repository": "git@github.com:isalikov/gitcv-storage.git",
   "author": "Iakov Salikov <salikovpro@gmail.com>",
-  "license": "MIT",
-  "private": false,
+  "license": "UNLICENSED",
+  "private": true,
   "scripts": {
-    "dev": "nodemon cmd/do-spaces/main.js",
-    "start": "node cmd/do-spaces/main.js",
+    "dev": "nodemon cmd/gitcv-storage/main.js",
+    "start": "node cmd/gitcv-storage/main.js",
     "lint": "eslint ."
   },
   "prettier": {
@@ -48,8 +48,12 @@
     "cors": "^2.8.5",
     "dotenv": "^14.2.0",
     "express": "^4.17.2",
+    "http-status": "^1.6.2",
+    "mime-types": "^2.1.35",
     "multer": "^1.4.4",
-    "multer-s3": "^2.10.0"
+    "multer-s3": "^2.10.0",
+    "redis": "^4.6.7",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "eslint": "^8.2.0",

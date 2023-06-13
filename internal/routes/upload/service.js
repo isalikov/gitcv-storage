@@ -1,6 +1,8 @@
 const AWS = require('aws-sdk')
 const multer = require('multer')
 const multerS3 = require('multer-s3')
+const mime = require('mime-types')
+const uuid = require('uuid')
 
 const s3 = new AWS.S3({
     endpoint: process.env.DO_SPACES_ENDPOINT,
@@ -14,7 +16,9 @@ const uploadService = multer({
         acl: 'public-read',
         bucket: process.env.DO_SPACES_NAME,
         key: (req, file, cb) => {
-            cb(null, `${Date.now().toString()}/${file.originalname}`)
+            const path = `${uuid.v4()}.${mime.extension(file.mimetype)}`
+
+            cb(null, `${Date.now().toString()}/${path}`)
         },
     }),
 })

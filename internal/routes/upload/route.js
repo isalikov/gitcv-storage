@@ -7,13 +7,19 @@ const getFileUrl = (req) => {
 }
 
 const uploadRoute = (req, res) => {
-    const url = getFileUrl(req)
+    try {
+        const url = getFileUrl(req)
 
-    if (!url) {
-        return res.status(400).end('Invalid Request')
+        if (!url) {
+            return res.status(400).end('Invalid Request')
+        }
+
+        return res.json({ url })
+    } catch (e) {
+        // TODO: handle sentry error
+        console.error(e)
+        return res.sendStatus(500)
     }
-
-    return res.json({ url })
 }
 
 module.exports = uploadRoute
